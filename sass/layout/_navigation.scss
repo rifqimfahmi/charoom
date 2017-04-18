@@ -1,0 +1,51 @@
+.nav {
+    background-color: #039BE5;
+    box-shadow: 0 .5px 7px rgba(0, 0, 0, .5);
+    h1 {
+        line-height: 70px;
+        font-size: 1.5em;
+        margin: 0;
+        text-align: center;
+        background-color: #01579B;
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+    ul {
+        list-style-type: none;
+        margin: 0 !important;
+        padding: 0 !important;
+        vertical-align: middle;
+        li {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 70px;
+            a {
+                text-decoration: none;
+                color: #fff;
+            }
+        }
+        &.nav-center {
+            a {
+                padding: 5px 10px;
+                &:hover {
+                    color: #EEEEEE;
+                }
+            }
+        }
+        &.nav-right {
+            a {
+                padding: 8px 12px;
+                &.signup {
+                    background-color: #01579B;
+                    border-radius: 8px;
+                    border: 1.7px solid #fff;
+                }
+                &:hover {
+                    color: #EEEEEE;
+                }
+            }
+        }
+    }
+}

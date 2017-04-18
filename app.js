@@ -2,7 +2,12 @@ var express = require('express'),
     app = express(),
     io = require('socket.io')(app.listen(3000)),
     path = require('path'),
-    router = require('./route/');
+    router = require('./route/'),
+    mongoose = require('mongoose');
+
+// connect tp mongoDB database
+mongoose.connect('mongodb://127.0.0.1:27017/charoom');
+mongoose.connection.on('error', () => { console.log('connection error') });
 
 // set views and view engine
 app.set("view engine", "pug");

@@ -1,7 +1,8 @@
 var express = require('express'),
-    router = express.Router();
+    router = express.Router(),
+    User = require('../model/user');
 
-router.get("/", (req, res) => {
+router.get("/", (req, res, next) => {
     res.render("index");
 });
 

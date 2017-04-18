@@ -1,0 +1,31 @@
+.messageContainer {
+    overflow-y: scroll;
+}
+
+form {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #434A54;
+    #msgIpt {
+        width: 80%;
+        border: none;
+    }
+    #submit {
+        width: 20%;
+        background-color: #A0D468;
+        border: none;
+        &:hover {
+            background-color: #8CC152;
+        }
+    }
+}
+
+.text {
+    padding: 10px 20px;
+    &:nth-child(odd) {
+        background-color: #CCD1D9;
+    }
+}
