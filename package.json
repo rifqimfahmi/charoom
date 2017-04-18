@@ -1,0 +1,16 @@
+{
+  "name": "real-time-web-socketio",
+  "version": "1.0.0",
+  "description": "learning socket programming",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rifqi Mulya Fahmi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2",
+    "mongoose": "^4.9.5",
+    "socket.io": "^1.7.3"
+  }
+}

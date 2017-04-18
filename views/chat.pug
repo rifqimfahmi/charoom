@@ -1,0 +1,10 @@
+extends layout
+
+block content
+	.messageContainer
+	form(method="POST", action="/", autocomplete="off" id='msgForm').p-2
+		input(type="text", id="msgIpt", placeholder="type message").p-2
+		button(type='submit', value="submit", id='submit').p-2 Submit
+
+block jscript
+	script(src="/js/myIO.js")
