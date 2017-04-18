@@ -1,28 +1,21 @@
 var express = require('express'),
     app = express(),
-    server = app.listen(3000, () => { console.log("Running localhost on port 3000"); }),
-    io = require('socket.io')(server),
+    io = require('socket.io')(app.listen(3000)),
     path = require('path'),
-    route = require('./route/');
+    router = require('./route/');
 
+// set views and view engine
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "/views"));
 
+// middleware for static file
 app.use(express.static(path.join(__dirname, "/public")));
 
-app.use('/', route);
+// handle route
+app.use('/', router.route);
 
-io.on('connection', socket => {
-	console.log(socket.id);
-	socket.on('incomingChat', message => {
-		io.emit("displayChat", message);
-	});
-	socket.on("disconnect", () => {
-		console.log("user has gone");
-	});
-});
-
-
+// handle io request
+router.io(io);
 
 //Handle error
 app.use((req, res, next) => {
