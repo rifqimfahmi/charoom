@@ -3,7 +3,7 @@ extends layout
 block content
 	if currentUser
 		.messageContainer
-		form(method="POST", action="/", autocomplete="off" id='msgForm').p-2
+		form.chat(method="POST", action="/", autocomplete="off" id='msgForm').p-2
 			input(type="text", id="msgIpt", placeholder="type message").p-2
 			button(type='submit', value="submit", id='submit').p-2 Submit
 	else 

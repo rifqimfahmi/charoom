@@ -1,14 +1,21 @@
-var express = require('express'),
-    router = express.Router(),
-    User = require('../model/user'),
+var router = require('express').Router(),
+    signupUser = require('../model/signup'),
     messages = [];
 
 router.get("/", (req, res, next) => {
-    res.render("index"); 
+    res.render("index");
 });
 
 router.get("/chat", (req, res) => {
     res.render("chat");
+});
+
+router.get("/signup", (req, res) => {
+    res.render('signup');
+});
+
+router.post("/signup", (req, res, next) => {
+    signupUser(req, res, next, req.body);
 });
 
 function io(io) {

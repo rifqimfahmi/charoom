@@ -9,10 +9,8 @@ var UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    username: {
+    gender: {
         type: String,
-        unique: true,
-        trim: true,
         required: true
     },
     email: {
@@ -21,10 +19,19 @@ var UserSchema = new mongoose.Schema({
         trim: true,
         unique: true
     },
+    username: {
+        type: String,
+        unique: true,
+        trim: true,
+        required: true
+    },
     password: {
         type: String,
         required: true
-    }
+    },
+    birthDate: String,
+    hobby: String,
+    passion: String
 });
 
 var User = mongoose.model("user", UserSchema);

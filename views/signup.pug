@@ -1,0 +1,60 @@
+extends layout
+
+block content
+	.container.py-5.form-container
+		h2.offset-2.mb-4 Signup to ChaRoom 
+			span.text-info (Required)
+		form#signupForm.signupForm(action='/signup', method='POST')
+			.form-group.row
+				label.col-2.col-form-label.offset-2 First Name
+				input#firstName.col-6.form-control(type='text', name='firstName', placeholder='First Name')
+
+			.form-group.row
+				label.col-2.col-form-label.offset-2 Last Name
+				input#lastName.col-6.form-control(type='text', name='lastName', placeholder='Last Name')
+
+			.form-group.row
+				label.col-2.col-form-label.offset-2 Gender
+				select#gender.col-6.form-control(name='gender')
+					option(disabled, selected, value="") Choose gender..
+					option(value='male') Male
+					option(value='female') Female
+
+			.form-group.row
+				label.col-2.col-form-label.offset-2 Email
+				input#email.col-6.form-control(type='email', name='email', placeholder='Email address')
+
+			.form-group.row
+				label.col-2.col-form-label.offset-2 Username
+				input#username.col-6.form-control(type='text', name='username', placeholder='Username')
+
+			.form-group.row
+				label.col-2.col-form-label.offset-2 Password
+				input#password.col-6.form-control(type='password', name='password', placeholder='Password')
+
+			.form-group.row
+				label.col-2.col-form-label.offset-2 Confirm password
+				input#confirmpass.col-6.form-control(type='password', name='confirmpass', placeholder='Password')
+
+			h2.offset-2.my-4 Tell more about yourself 
+				span.text-info (Additional)
+
+			.form-group.row
+				label.col-2.col-form-label.offset-2 Birth date
+				input.col-6.form-control(type='date', name='birthdate')
+
+			.form-group.row
+				label.col-2.col-form-label.offset-2 Hobby
+				input.col-6.form-control(type='text', name='hobby', placeholder='ex: reading, cooking, programming, etc')
+
+			.form-group.row
+				label.col-2.col-form-label.offset-2 Passion
+				input.col-6.form-control(type='text', name='passion', placeholder='ex: music, design, etc')
+
+			.form-group.row
+				label.col-2.col-form-label.offset-2 Country
+				include _country
+
+			button.btn.btn-primary.offset-2(type='submit') Submit
+block jscript
+	script(src="/js/signup.js")

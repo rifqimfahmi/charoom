@@ -3,7 +3,8 @@ var express = require('express'),
     io = require('socket.io')(app.listen(3000)),
     path = require('path'),
     router = require('./route/'),
-    mongoose = require('mongoose');
+    mongoose = require('mongoose'),
+    bodyParser = require('body-parser');
 
 // connect tp mongoDB database
 mongoose.connect('mongodb://127.0.0.1:27017/charoom');
@@ -12,6 +13,9 @@ mongoose.connection.on('error', () => { console.log('connection error') });
 // set views and view engine
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "/views"));
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // middleware for static file
 app.use(express.static(path.join(__dirname, "/public")));
