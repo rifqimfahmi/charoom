@@ -2,24 +2,26 @@ block nav
 .nav.text-white
 	.container
 		.row
-			.col-2
+			.col-md-3
 				h1 
 					a(href='/') ChaRoom
 			|
 			|
-			.col-8.text-center
+			.col-md-7.text-center
 				ul.nav-center
 					li
 						a(href='#') Room
 					li
 						a(href='/chat') Chat
 					li
-						a(href='#') About
+						a(href='/#about') About
 					li 
 						a(href='#') Tutorial
+					li
+						a.myProfile(href='/#profile') My profile
 			|
 			|
-			.col-2.text-right
+			.col-md-2.text-center.text-md-right
 				ul.nav-right
 					li
 						a(href='#') Log in

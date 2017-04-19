@@ -1,5 +1,5 @@
 var socket = io();
-$('.messageContainer')[0].style.height = $('#msgForm')[0].offsetTop + 'px';
+$('.messageContainer')[0].style.height = $('#msgForm')[0].offsetTop - $('.nav')[0].offsetHeight + 'px';
 
 $('form').submit(function() {
     var message = $("#msgIpt").val();

@@ -1,10 +1,14 @@
 extends layout
 
 block content
-	.messageContainer
-	form(method="POST", action="/", autocomplete="off" id='msgForm').p-2
-		input(type="text", id="msgIpt", placeholder="type message").p-2
-		button(type='submit', value="submit", id='submit').p-2 Submit
+	if currentUser
+		.messageContainer
+		form(method="POST", action="/", autocomplete="off" id='msgForm').p-2
+			input(type="text", id="msgIpt", placeholder="type message").p-2
+			button(type='submit', value="submit", id='submit').p-2 Submit
+	else 
+		.container.pt-5
+			h2.bg-danger.p-3.text-white You must be logged in to start chatting with others
 
 block jscript
 	script(src="/js/myIO.js")

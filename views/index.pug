@@ -2,10 +2,15 @@ extends layout
 
 block content
 	#profile
-		.container
+		if currentUser
+			.container.pt-5
 
-	#about
-		.container
-			
+		else 
+			.container.pt-5.no_profile
+				h2.text-white.p-3.bg-danger You must be logged in to get profile
+	#about.bg-success.text-white
+		.container.pt-5
+			h2.text-center About
+
 
 block jscript
