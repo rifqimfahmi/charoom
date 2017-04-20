@@ -23,7 +23,11 @@ block nav
 			|
 			.col-md-2.text-center.text-md-right
 				ul.nav-right
-					li
-						a(href='#') Log in
-					li
-						a.signup(href="/signup") Signup
+					if usrid
+						li
+							a(href='/logout') Log out
+					else
+						li
+							a(href='#') Log in
+						li
+							a.signup(href="/signup") Signup

@@ -29,9 +29,10 @@ var UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    country: String,
     birthDate: String,
-    hobby: String,
-    passion: String
+    hobby: Array,
+    passion: Array
 });
 
 var User = mongoose.model("user", UserSchema);

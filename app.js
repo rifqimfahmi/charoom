@@ -4,7 +4,8 @@ var express = require('express'),
     path = require('path'),
     router = require('./route/'),
     mongoose = require('mongoose'),
-    bodyParser = require('body-parser');
+    bodyParser = require('body-parser'),
+    session = require('express-session');
 
 // connect tp mongoDB database
 mongoose.connect('mongodb://127.0.0.1:27017/charoom');
@@ -13,6 +14,13 @@ mongoose.connection.on('error', () => { console.log('connection error') });
 // set views and view engine
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "/views"));
+
+app.use(session({
+    secret: "chaRoom secret ID",
+    resave: true,
+    saveUninitialized: false
+
+}));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

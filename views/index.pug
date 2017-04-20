@@ -2,8 +2,9 @@ extends layout
 
 block content
 	#profile
-		if currentUser
+		if usrid
 			.container.pt-5
+				p #{usrid}
 
 		else 
 			.container.pt-5.no_profile
