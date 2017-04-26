@@ -1,7 +1,7 @@
 var express = require('express'),
     app = express(),
     io = require('socket.io')(app.listen(3000)),
-    path = require('path'),
+    path = require('path'), 
     router = require('./route/'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser'),

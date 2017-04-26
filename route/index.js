@@ -1,11 +1,10 @@
 var router = require('express').Router(),
-    signupUser = require('../model/signup'),
-    User = require('../model/user'),
+    Util = require('../model/util'),
     messages = [];
 
 router.get("/", (req, res, next) => {
     if(req.session.usrid){
-        res.locals.usrid = req.session.usrid;
+        req.app.locals.usrid = req.session.usrid;
     }
     res.render("index");
 });
@@ -19,10 +18,11 @@ router.get("/signup", (req, res, next) => {
 });
 
 router.post("/signup", (req, res, next) => {
-    signupUser(req, res, next, req.body);
+    Util.signup(req, res, next, req.body);
 });
 
 router.get("/logout", (req, res, next) => {
+    req.app.locals = {};
     req.session.destroy();
     res.redirect(301, "/");
 });

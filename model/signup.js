@@ -1,4 +1,4 @@
-var User = require('./user');
+var User = require('./db/user');
 
 function signupUser(req, res, next, user) {
     if (user.firstName &&
