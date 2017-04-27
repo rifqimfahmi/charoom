@@ -1,0 +1,17 @@
+extends layout
+
+block content
+	.container.py-5.form-container
+		if errLogin
+			h2.bg-danger.p-3.text-white #{errLogin}
+		h2.offset-2.mb-4 Login to ChaRoom
+		form#signupForm.signupForm(action='/login', method='POST')
+			.form-group.row
+				label.col-2.col-form-label.offset-2 Username
+				input#firstName.col-6.form-control(type='text', name='username', placeholder='First Name')
+
+			.form-group.row
+				label.col-2.col-form-label.offset-2 Password
+				input#lastName.col-6.form-control(type='password', name='password', placeholder='Last Name')
+
+			button.btn.btn-primary.offset-2(type='submit') Login
