@@ -1,5 +1,5 @@
 var signup = require('./signup'),
-	db = require('./db/user');
+	login = require('./login');
 
 module.exports.signup = signup;
-module.exports.db = db;
+module.exports.login = login;

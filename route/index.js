@@ -4,6 +4,7 @@ var router = require('express').Router(),
 
 router.get("/", (req, res, next) => {
     if(req.session.usrid){
+        console.log(req.session.usrid);
         req.app.locals.usrid = req.session.usrid;
     }
     res.render("index");
@@ -21,10 +22,19 @@ router.post("/signup", (req, res, next) => {
     Util.signup(req, res, next, req.body);
 });
 
+router.get("/login", (req, res, next) => {
+    res.render('login');
+});
+
+router.post("/login", (req, res, next) => {
+    Util.login(req, res, next);
+});
+
 router.get("/logout", (req, res, next) => {
     req.app.locals = {};
     req.session.destroy();
-    res.redirect(301, "/");
+    console.log('exec');
+    res.redirect("/");
 });
 
 function io(io) {

@@ -1,7 +1,7 @@
 extends layout
 
 block content
-	if currentUser
+	if usrid
 		.messageContainer
 		form.chat(method="POST", action="/", autocomplete="off" id='msgForm').p-2
 			input(type="text", id="msgIpt", placeholder="type message").p-2
